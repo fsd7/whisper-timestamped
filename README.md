@@ -13,7 +13,7 @@ Multilingual Automatic Speech Recognition with word-level timestamps and confide
 * [Usage](#usage)
    * [Python](#python)
    * [Command line](#command-line)
-   * [Plotting word alignment](#plotting-word-alignment)
+   * [Plot of word alignment](#plot-of-word-alignment)
    * [Example output](#example-output)
    * [Options that may improve results](#options-that-may-improve-results)
       * [Accurate Whisper transcription](#accurate-whisper-transcription)
@@ -72,7 +72,7 @@ python3 setup.py install
 
 #### Additional packages that might be needed
 
-If you want to plot alignment between audio timestamps and words (as in [this section](#plotting-word-alignment)), you also need matplotlib:
+If you want to plot alignment between audio timestamps and words (as in [this section](#plot-of-word-alignment)), you also need matplotlib:
 ```bash
 pip3 install matplotlib
 ```
@@ -209,7 +209,12 @@ Note that you can use the `plot_word_alignment` option of the `whisper_timestamp
 
 ### Example output
 
-Here is an example output of the `whisper_timestamped.transcribe()` function, which can be viewed by using the CLI:
+The output of `whisper_timestamped.transcribe()` function is a python dictionary,
+which can be viewed in JSON format using the CLI.
+
+The JSON schema can be seen in [tests/json_schema.json](tests/json_schema.json).
+
+Here is an example output:
 ```bash
 whisper_timestamped AUDIO_FILE.wav --model tiny --language fr
 ```
